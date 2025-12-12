@@ -206,10 +206,3 @@ sqlcmd -S localhost -d RetailDB -i sql/03_analysis_queries.sql
 * **Email:** [mahmoud23456123@gmail.com](mailto:mahmoud23456123@gmail.com)
 
 ---
-
----
-
-لو تحب، أقدر أجهزلك كمان **نسخة مع صور plot حقيقية** (من data عندك أو dummy plots) بحيث README يظهر **visual portfolio-ready** ويكون جذاب على GitHub.  
-
-تحب أعملها لك؟
-```
