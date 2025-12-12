@@ -38,18 +38,26 @@ retail-store-data-pipeline/
 ├── notebooks/
 │   ├── 01_data_pipeline.ipynb       # ETL Pipeline: Load, Clean, Transform, Load
 │   └── 02_final_report.ipynb        # Analysis & Visualizations
-├── data/                             # Raw CSV files (9 files)
-├── cleaned_data/                     # Cleaned CSV files
-├── sql/
+├── Source_Data/                     # Raw CSV files (9 files)
+├── cleaned_data/                     # Cleaned CSV files (9 files)
+├── SQL_Scripts/
 │   ├── 01_create_database.sql
 │   ├── 02_create_schema.sql
 │   └── 03_analysis_queries.sql
-├── reports/                          # Generated reports and plots
+├── reports/
+│   │   └── plots/                        # Generated plots (Matplotlib)
+│   │       ├── sales_trend.png
+│   │       ├── top_customers.png
+│   │       └── category_revenue.png
+│   ├── top_products.csv
+│   ├── top_customers.csv
+│   ├── store_revenue.csv
+│   ├── category_revenue.csv
+│   └── monthly_sales.csv
+│
 └── images/
-├── erd_diagram.png
-├── database_schema.png
-├── sales_trend.png
-└── top_customers.png
+    └── erd_diagram.png
+
 
 ````
 
