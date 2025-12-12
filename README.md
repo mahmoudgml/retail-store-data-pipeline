@@ -39,8 +39,45 @@ retail-store-data-pipeline/
 │   ├── 01_create_database.sql
 │   ├── 02_create_schema.sql
 │   └── 03_analysis_queries.sql
-└── reports/                          # Generated reports and plots
+├── reports/                          # Generated reports and plots
+└── images/                           # Database diagrams
+    ├── erd_diagram.png
+    └── database_schema.png
 ```
+
+---
+
+## 🗃️ Database Design
+
+### Entity Relationship Diagram (ERD)
+
+![ERD Diagram](images/erd_diagram.png)
+
+The database follows **Third Normal Form (3NF)** with proper relationships between tables.
+
+**Tables:**
+- **Brands** (9 records)
+- **Categories** (7 records)  
+- **Stores** (3 records)
+- **Products** (321 records) → References Brands & Categories
+- **Staffs** (10 records) → References Stores
+- **Customers** (1,445 records)
+- **Orders** (1,615 records) → References Customers, Stores, Staffs
+- **OrderItems** (4,722 records) → References Orders & Products
+- **Stocks** (939 records) → References Stores & Products
+
+
+---
+### Database Schema Diagram
+
+![Database Schema](images/database_schema.png)
+
+**Key Features:**
+- ✅ Primary Keys on all tables
+- ✅ Foreign Keys with proper constraints
+- ✅ Indexes for query optimization
+- ✅ Composite Primary Keys (OrderItems, Stocks)
+- ✅ Self-referencing FK (Staffs.manager_id)
 
 ---
 
