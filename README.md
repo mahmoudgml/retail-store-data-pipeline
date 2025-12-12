@@ -147,7 +147,7 @@ sqlcmd -S localhost -d RetailDB -i sql/03_analysis_queries.sql
    * Remove duplicates and unrealistic values
 3. **Transform Data**
 
-   * `total_price = quantity * list_price * (1 - discount)`
+   * `total_price = quantity * list_price`
    * `order_total_amount` per order
    * Customer `full_name`
 4. **Load into SQL Server**
