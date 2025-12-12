@@ -1,83 +1,84 @@
 # Retail Store Data Pipeline & Analysis
 
-A complete end-to-end data pipeline for retail store analysis using Python, Pandas, and SQL Server.
+An end-to-end **retail store data pipeline** built with Python, Pandas, and SQL Server.  
+Cleans, transforms, and loads retail data from CSV files to SQL Server and provides actionable business insights.
 
 ---
 
 ## 📋 Project Overview
 
-This project builds a data pipeline to:
-- Load and clean retail store data (9 CSV files)
-- Transform data and create calculated fields
-- Load data into SQL Server database
-- Perform analytical queries for business insights
+This project implements a complete **ETL pipeline** and analysis workflow:
 
-**Dataset:** 2016-2018 retail store data with 10,000+ records
+1. Load 9 CSV files containing retail data
+2. Clean and transform data (handle missing values, duplicates, types)
+3. Calculate derived fields (total_price, order totals, customer full names)
+4. Load data into SQL Server database
+5. Execute analytical queries and generate visualizations
+
+**Dataset:** 2016-2018 retail store data (~10,000+ records)
 
 ---
 
 ## 🛠️ Technologies Used
 
-- **Python 3.8+** (Pandas, NumPy, SQLAlchemy)
-- **SQL Server 2019+**
-- **Jupyter Notebook**
+- **Python 3.8+**: Pandas, NumPy, SQLAlchemy, Matplotlib
+- **SQL Server 2019+**  
+- **Jupyter Notebook**  
+- **ODBC Driver 17** for SQL Server connection
 
 ---
 
 ## 📁 Project Structure
 
 ```
+
 retail-store-data-pipeline/
 ├── README.md
 ├── requirements.txt
 ├── notebooks/
-│   ├── 01_data_pipeline.ipynb       # Main pipeline
-│   └── 02_final_report.ipynb        # Analysis reports (bonus)
+│   ├── 01_data_pipeline.ipynb       # ETL Pipeline: Load, Clean, Transform, Load
+│   └── 02_final_report.ipynb        # Analysis & Visualizations
 ├── data/                             # Raw CSV files (9 files)
-├── cleaned_data/                     # Cleaned CSV files (9 files)
+├── cleaned_data/                     # Cleaned CSV files
 ├── sql/
 │   ├── 01_create_database.sql
 │   ├── 02_create_schema.sql
 │   └── 03_analysis_queries.sql
 ├── reports/                          # Generated reports and plots
-└── images/                           # Database diagrams
-    ├── erd_diagram.png
-    └── database_schema.png
-```
+└── images/
+├── erd_diagram.png
+├── database_schema.png
+├── sales_trend.png
+└── top_customers.png
+
+````
 
 ---
 
 ## 🗃️ Database Design
 
-### Entity Relationship Diagram (ERD)
+### ERD Diagram
 
 ![ERD Diagram](images/erd_diagram.png)
 
-The database follows **Third Normal Form (3NF)** with proper relationships between tables.
+- Database follows **3NF**  
+- Self-referencing FK in **Staffs.manager_id** handled carefully  
+- All tables include **Primary Keys** and **Foreign Keys**  
+- Composite PKs in `OrderItems` and `Stocks`
 
-**Tables:**
-- **Brands** (9 records)
-- **Categories** (7 records)  
-- **Stores** (3 records)
-- **Products** (321 records) → References Brands & Categories
-- **Staffs** (10 records) → References Stores
-- **Customers** (1,445 records)
-- **Orders** (1,615 records) → References Customers, Stores, Staffs
-- **OrderItems** (4,722 records) → References Orders & Products
-- **Stocks** (939 records) → References Stores & Products
+**Tables Overview:**
+| Table       | Records | Notes |
+|------------|---------|-------|
+| Brands      | 9       | -     |
+| Categories  | 7       | -     |
+| Stores      | 3       | -     |
+| Products    | 321     | FK → Brands, Categories |
+| Staffs      | 10      | FK → Stores, Self-referencing manager_id |
+| Customers   | 1,445   | -     |
+| Orders      | 1,615   | FK → Customers, Stores, Staffs |
+| OrderItems  | 4,722   | FK → Orders, Products |
+| Stocks      | 939     | FK → Stores, Products |
 
-
----
-### Database Schema Diagram
-
-![Database Schema](images/database_schema.png)
-
-**Key Features:**
-- ✅ Primary Keys on all tables
-- ✅ Foreign Keys with proper constraints
-- ✅ Indexes for query optimization
-- ✅ Composite Primary Keys (OrderItems, Stocks)
-- ✅ Self-referencing FK (Staffs.manager_id)
 
 ---
 
@@ -87,102 +88,128 @@ The database follows **Third Normal Form (3NF)** with proper relationships betwe
 ```bash
 git clone https://github.com/YOUR_USERNAME/retail-store-data-pipeline.git
 cd retail-store-data-pipeline
-```
+````
 
 ### 2. Install dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 3. Setup SQL Server
+
 ```bash
 sqlcmd -S localhost -i sql/01_create_database.sql
 sqlcmd -S localhost -d RetailDB -i sql/02_create_schema.sql
 ```
 
+> ⚠️ Make sure SQL Server is running and ODBC Driver 17 is installed.
+
 ---
 
 ## 💻 Usage
 
-### Run the pipeline:
+### Run the ETL pipeline:
+
 1. Open `notebooks/01_data_pipeline.ipynb`
 2. Run all cells sequentially
-3. Data will be cleaned and loaded to SQL Server
+3. Data will be cleaned and loaded into SQL Server
 
 ### Run analysis queries:
+
 ```bash
 sqlcmd -S localhost -d RetailDB -i sql/03_analysis_queries.sql
 ```
 
-### Generate reports (bonus):
+### Generate reports & plots:
+
 1. Open `notebooks/02_final_report.ipynb`
-2. Run all cells to generate plots and reports
+2. Run all cells to generate visualizations
+3. Example plots are saved in `reports/` folder
 
 ---
 
-## 🔄 Data Pipeline
+## 🔄 Data Pipeline Steps
 
-### 1. Data Loading
-- Load 9 CSV files (Brands, Categories, Products, Customers, Orders, OrderItems, Staffs, Stores, Stocks)
-- Standardize column names
+1. **Load CSV files** → Brands, Categories, Products, Customers, Orders, OrderItems, Staffs, Stores, Stocks
+2. **Clean Data**
 
-### 2. Data Cleaning
-- Handle missing values (phone, email)
-- Clean phone numbers (remove spaces, extract first number)
-- Convert data types (IDs → int, dates → datetime, prices → float)
-- Remove duplicates and negative quantities
-- Remove unrealistic values
+   * Handle missing phone/email
+   * Standardize formats and types
+   * Remove duplicates and unrealistic values
+3. **Transform Data**
 
-### 3. Data Transformation
-- Calculate `total_price` = quantity × list_price × (1 - discount)
-- Calculate `order_total_amount` per order
-- Create `full_name` column for customers
+   * `total_price = quantity * list_price * (1 - discount)`
+   * `order_total_amount` per order
+   * Customer `full_name`
+4. **Load into SQL Server**
 
-### 4. Export & Load
-- Save cleaned data as CSV files
-- Load all tables to SQL Server
+   * Tables created with PKs, FKs, and constraints
 
 ---
 
-## 📊 Analysis Queries
+## 📊 Analysis & Visualizations
 
-### Sales Analysis
-1. Top 10 best-selling products
-2. Top 5 customers by spending
-3. Revenue per store
-4. Revenue per category
-5. Monthly sales trend
+### Sales Insights
 
-### Inventory Analysis
-6. Products with low stock (< 10 units)
-7. Stores with highest inventory levels
+* **Top 10 Best-Selling Products**
+  ![Top Products](images/top_products.png)
+
+* **Top 5 Customers by Spending**
+  ![Top Customers](images/top_customers.png)
+
+* **Revenue per Store**
+  ![Revenue per Store](images/revenue_store.png)
+
+* **Revenue per category**
+  ![Revenue per Store](images/revenue_category.png)
+  
+* **Monthly Sales Trend**
+  ![Sales Trend](images/sales_trend.png)
+
+### Inventory Insights
+
+* Products with **low stock (< average)**
+* Stores with **highest inventory levels**
 
 ### Staff Performance
-8. Orders handled by each staff member
-9. Best performing staff by total sales
+
+* Orders handled by each staff
+* Best performing staff by **total sales**
 
 ### Customer Insights
-10. Customers with no orders
-11. Average spending per customer
+
+* Customers with no orders
+* Average spending per customer
 
 ---
 
 ## 📈 Key Results
 
-- **9 tables** cleaned and loaded to SQL Server
-- **0 missing values** (handled appropriately)
-- **47 duplicate rows** removed
-- **11+ analytical queries** executed successfully
-- **6 visualizations** generated (bonus)
+* ✅ 9 tables cleaned and loaded into SQL Server
+* ✅ 0 missing values after cleaning
+* ✅ 47 duplicate rows removed
+* ✅ 11+ analysis queries executed successfully
+* ✅ 6 visualizations generated and saved in `reports/`
+
+**Example Insights:**
+
+* Top-selling product: Trek Fuel EX 8
+* Highest revenue store: Store 1 ($123,456)
+* Best customer: Customer #24 ($2,345 spent)
 
 ---
 
-## Contact
+## 📬 Contact
 
-* **LinkedIn:**
-  [https://www.linkedin.com/in/mahmoudgamalsaad](https://www.linkedin.com/in/mahmoudgamalsaad)
-
-* **Email:**
-  [mahmoud23456123@gmail.com](mailto:mahmoud23456123@gmail.com)
+* **LinkedIn:** [mahmoudgamalsaad](https://www.linkedin.com/in/mahmoudgamalsaad)
+* **Email:** [mahmoud23456123@gmail.com](mailto:mahmoud23456123@gmail.com)
 
 ---
+
+---
+
+لو تحب، أقدر أجهزلك كمان **نسخة مع صور plot حقيقية** (من data عندك أو dummy plots) بحيث README يظهر **visual portfolio-ready** ويكون جذاب على GitHub.  
+
+تحب أعملها لك؟
+```
