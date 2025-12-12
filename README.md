@@ -59,8 +59,8 @@ retail-store-data-pipeline/
 │   ├── cleaned_Stores.csv
 │   └── cleaned_Stocks.csv                     # Cleaned CSV files (9 files)
 ├── SQL_Scripts/
-│   ├── 01_create_database.sql
-│   ├── 02_create_schema.sql
+│   ├── 01_init_database.sq
+│   ├── 02_ddl_queries.sql
 │   └── 03_analysis_queries.sql
 ├── reports/
 │   │   └── plots/                        # Generated plots (Matplotlib)
