@@ -129,7 +129,7 @@ retail-store-data-pipeline/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/retail-store-data-pipeline.git
+git clone https://github.com/mahmoudgml/retail-store-data-pipeline.git
 cd retail-store-data-pipeline
 ````
 
