@@ -192,19 +192,19 @@ sqlcmd -S localhost -d RetailDB -i sql/03_analysis_queries.sql
 ### Sales Insights
 
 * **Top 10 Best-Selling Products**
-  ![Top Products](images/top_products.png)
+  ![Top Products](reports/plot_top_products.png)
 
 * **Top 5 Customers by Spending**
-  ![Top Customers](images/top_customers.png)
+  ![Top Customers](reports/plot_top_customers.png)
 
 * **Revenue per Store**
-  ![Revenue per Store](images/revenue_store.png)
+  ![Revenue per Store](reports/plot_store_revenue.png)
 
 * **Revenue per category**
-  ![Revenue per Store](images/revenue_category.png)
+  ![Revenue per Store](reports/plot_category_revenue.png)
   
 * **Monthly Sales Trend**
-  ![Sales Trend](images/sales_trend.png)
+  ![Sales Trend](reports/plot_monthly_trend.png)
 
 ### Inventory Insights
 
