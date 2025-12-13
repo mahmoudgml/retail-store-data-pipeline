@@ -1,0 +1,10 @@
+staff_id,first_name,last_name,email,phone,active,store_id,manager_id
+2,Mireya,Unknown,mireya.copeland@bikes.shop,8315555555,1,1.0,1.0
+3,Genna,Serrano,genna.serrano@bikes.shop,8315555556,1,1.0,2.0
+4,Virgie,Wiggins,virgie.wiggins@bikes.shop,8315555557,1,1.0,2.0
+5,Jannette,David,jannette.david@bikes.shop,5163794444,1,2.0,1.0
+6,Marcelene,Boyer,unknown@email.com,5163794445,1,2.0,5.0
+7,Venita,Daniel,venita.daniel@bikes.shop,Unknown,1,2.0,5.0
+8,Kali,Vargas,kali.vargas@bikes.shop,9725305555,1,3.0,1.0
+9,Layla,Terrell,layla.terrell@bikes.shop,9725305556,1,3.0,7.0
+10,Bernardine,Houston,bernardine.houston@bikes.shop,9725305557,1,3.0,7.0
