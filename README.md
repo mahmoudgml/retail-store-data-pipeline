@@ -235,12 +235,6 @@ sqlcmd -S localhost -d RetailDB -i sql/03_analysis_queries.sql
 * ✅ 11+ analysis queries executed successfully
 * ✅ 6 visualizations generated and saved in `reports/`
 
-**Example Insights:**
-
-* Top-selling product: Trek Fuel EX 8
-* Highest revenue store: Store 1 ($123,456)
-* Best customer: Customer #24 ($2,345 spent)
-
 ---
 
 ## 📬 Contact
