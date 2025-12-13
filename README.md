@@ -177,7 +177,7 @@ sqlcmd -S localhost -d RetailDB -i sql/03_analysis_queries.sql
 1. **Load CSV files** → Brands, Categories, Products, Customers, Orders, OrderItems, Staffs, Stores, Stocks
 2. **Clean Data**
 
-   * Handle missing phone/email
+   * Handle missing values
    * Standardize formats and types
    * Remove duplicates and unrealistic values
 3. **Transform Data**
