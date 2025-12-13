@@ -76,15 +76,19 @@ retail-store-data-pipeline/
 │   ├── 02_ddl_queries.sql
 │   └── 03_analysis_queries.sql
 ├── reports/
-│   │   └── plots/                        # Generated plots (Matplotlib)
-│   │       ├── sales_trend.png
-│   │       ├── top_customers.png
-│   │       └── category_revenue.png
-│   ├── top_products.csv
-│   ├── top_customers.csv
-│   ├── store_revenue.csv
-│   ├── category_revenue.csv
-│   └── monthly_sales.csv
+│   │ # Generated plots (Matplotlib)
+│   ── plot_top_products.png
+│   ── plot_top_customers.png
+│   ── plot_store_revenue.png
+    ── plot_category_revenue.png
+    ── plot_monthly_trend.png
+│   │
+│   │
+│   ── top_products.csv
+│   ── top_customers.csv
+│   ── store_revenue.csv
+│   ── category_revenue.csv
+│   ── monthly_sales.csv
 │
 └── images/
     └── erd_diagram.png
