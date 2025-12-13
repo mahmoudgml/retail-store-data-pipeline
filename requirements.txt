@@ -1,0 +1,13 @@
+# Retail Store Data Pipeline Requirements
+# Python 3.8+
+
+# Core Data Processing
+pandas>=1.5.0
+numpy>=1.23.0
+
+# Database Connection
+sqlalchemy>=2.0.0
+pyodbc>=4.0.39
+
+# Data Visualization
+matplotlib>=3.6.0
