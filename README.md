@@ -5,6 +5,19 @@ Cleans, transforms, and loads retail data from CSV files to SQL Server and provi
 
 ---
 
+## 📑 Table of Contents
+1. [Project Overview](#project-overview)
+2. [Technologies Used](#technologies-used)
+3. [Project Structure](#project-structure)
+4. [Database Design](#database-design)
+5. [Installation](#installation)
+6. [Usage](#usage)
+7. [Data Pipeline Steps](#data-pipeline-steps)
+8. [Analysis & Visualizations](#analysis--visualizations)
+9. [Key Results](#key-results)
+
+---
+
 ## 📋 Project Overview
 
 This project implements a complete **ETL pipeline** and analysis workflow:
@@ -36,46 +49,14 @@ retail-store-data-pipeline/
 ├── README.md
 ├── requirements.txt
 ├── notebooks/
-│   ├── 01_data_pipeline.ipynb       # ETL Pipeline: Load, Clean, Transform, Load
-│   └── 02_final_report.ipynb        # Analysis & Visualizations
+│   ├── 01_data_pipeline.ipynb
+│   └── 02_final_report.ipynb
 ├── Source_Data/
-│   ├── Brands.csv
-│   ├── Categories.csv
-│   ├── Products.csv
-│   ├── Customers.csv
-│   ├── Orders.csv
-│   ├── OrderItems.csv
-│   ├── Staffs.csv
-│   ├── Stores.csv
-│   └── Stocks.csv                     # Raw CSV files (9 files)
 ├── cleaned_data/
-│   ├── cleaned_Brands.csv
-│   ├── cleaned_Categories.csv
-│   ├── cleaned_Products.csv
-│   ├── cleaned_Customers.csv
-│   ├── cleaned_Orders.csv
-│   ├── cleaned_OrderItems.csv
-│   ├── cleaned_ Staffs.csv
-│   ├── cleaned_Stores.csv
-│   └── cleaned_Stocks.csv                     # Cleaned CSV files (9 files)
 ├── SQL_Scripts/
-│   ├── 01_init_database.sq
-│   ├── 02_ddl_queries.sql
-│   └── 03_analysis_queries.sql
 ├── reports/
-│   │   └── plots/                        # Generated plots (Matplotlib)
-│   │       ├── sales_trend.png
-│   │       ├── top_customers.png
-│   │       └── category_revenue.png
-│   ├── top_products.csv
-│   ├── top_customers.csv
-│   ├── store_revenue.csv
-│   ├── category_revenue.csv
-│   └── monthly_sales.csv
-│
+│   └── plots/
 └── images/
-    └── erd_diagram.png
-
 
 ````
 
@@ -104,7 +85,6 @@ retail-store-data-pipeline/
 | Orders      | 1,615   | FK → Customers, Stores, Staffs |
 | OrderItems  | 4,722   | FK → Orders, Products |
 | Stocks      | 939     | FK → Stores, Products |
-
 
 ---
 
@@ -179,19 +159,10 @@ sqlcmd -S localhost -d RetailDB -i sql/03_analysis_queries.sql
 ### Sales Insights
 
 * **Top 10 Best-Selling Products**
-  ![Top Products](images/top_products.png)
-
 * **Top 5 Customers by Spending**
-  ![Top Customers](images/top_customers.png)
-
 * **Revenue per Store**
-  ![Revenue per Store](images/revenue_store.png)
-
 * **Revenue per category**
-  ![Revenue per Store](images/revenue_category.png)
-  
 * **Monthly Sales Trend**
-  ![Sales Trend](images/sales_trend.png)
 
 ### Inventory Insights
 
@@ -232,3 +203,4 @@ sqlcmd -S localhost -d RetailDB -i sql/03_analysis_queries.sql
 * **Email:** [mahmoud23456123@gmail.com](mailto:mahmoud23456123@gmail.com)
 
 ---
+
