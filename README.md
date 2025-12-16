@@ -231,18 +231,24 @@ sqlcmd -S localhost -d RetailDB -i SQL_Scripts/03_analysis_queries.sql
 
 ### Inventory Analysis
 
-* Products with low stock (less than 10 units)
-* Stores with highest inventory
+* **Products with low stock (less than 10 units)**
+  ![Products with low stock](reports/plot_low_stock_products.png)
+* **Stores with highest inventory**
+  ![Stores with highest inventory](reports/plot_store_inventory.png)
 
 ### Staff Performance
 
-* Orders handled per staff
-* Best-performing staff by revenue
+* **Orders handled per staff**
+  ![Orders handled per staff](reports/plot_staff_orders.png)
+* **Best-performing staff by revenue**
+  ![Best-performing staff by revenue](reports/plot_best_staff.png)
 
 ### Customer Insights
 
-* Customers with no orders
-* Average spending per customer
+* **Customers with no orders**
+  ![Customers with no orders](reports/plot_customer_orders_distribution.png)
+* **Average spending per customer**
+  ![Average spending per customer](reports/plot_avg_spending.png)
 
 ---
 
