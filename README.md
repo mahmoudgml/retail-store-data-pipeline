@@ -214,6 +214,7 @@ sqlcmd -S localhost -d RetailDB -i SQL_Scripts/03_analysis_queries.sql
 ## 📊 Analysis & Visualizations
 
 ### Sales Analysis
+
 * **Top 10 Best-Selling Products**
   ![Top Products](reports/plot_top_products.png)
 
@@ -243,11 +244,13 @@ sqlcmd -S localhost -d RetailDB -i SQL_Scripts/03_analysis_queries.sql
   ![Orders handled per staff](reports/plot_staff_orders.png)
   
 * **Best-performing staff by revenue**
+  
   ![Best-performing staff by revenue](reports/plot_best_staff.png)
 
 ### Customer Insights
 
 * **Customers with no orders**
+  
   ![Customers with no orders](reports/plot_customer_orders_distribution.png)
   
 * **Average spending per customer**
