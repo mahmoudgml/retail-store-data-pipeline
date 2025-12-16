@@ -233,6 +233,7 @@ sqlcmd -S localhost -d RetailDB -i SQL_Scripts/03_analysis_queries.sql
 
 * **Products with low stock (less than 10 units)**
   ![Products with low stock](reports/plot_low_stock_products.png)
+  
 * **Stores with highest inventory**
   ![Stores with highest inventory](reports/plot_store_inventory.png)
 
@@ -240,6 +241,7 @@ sqlcmd -S localhost -d RetailDB -i SQL_Scripts/03_analysis_queries.sql
 
 * **Orders handled per staff**
   ![Orders handled per staff](reports/plot_staff_orders.png)
+  
 * **Best-performing staff by revenue**
   ![Best-performing staff by revenue](reports/plot_best_staff.png)
 
@@ -247,6 +249,7 @@ sqlcmd -S localhost -d RetailDB -i SQL_Scripts/03_analysis_queries.sql
 
 * **Customers with no orders**
   ![Customers with no orders](reports/plot_customer_orders_distribution.png)
+  
 * **Average spending per customer**
   ![Average spending per customer](reports/plot_avg_spending.png)
 
