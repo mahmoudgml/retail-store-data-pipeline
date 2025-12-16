@@ -77,19 +77,7 @@ All datasets were provided in raw CSV format and required extensive preprocessin
 
 ## 🏗️ Architecture & Data Flow
 
-```
-CSV Files
-   ↓
-Pandas (Cleaning & Transformation)
-   ↓
-Cleaned CSV Files
-   ↓
-SQL Server (RetailDB)
-   ↓
-SQL Analysis Queries
-   ↓
-Python Reports & Visualizations
-```
+![Architecture & Data Flow](images/Architecture&Data_Flow.png)
 
 ---
 
