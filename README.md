@@ -91,8 +91,6 @@ SQL Analysis Queries
 Python Reports & Visualizations
 ```
 
-This separation ensures **reproducibility**, **debuggability**, and **scalability** of the pipeline.
-
 ---
 
 ## 📁 Project Structure
