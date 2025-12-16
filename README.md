@@ -101,6 +101,7 @@ retail-store-data-pipeline/
 │   └── tables/                  # CSV analysis outputs
 └── images/
     └── erd_diagram.png
+    └── Architecture_Data_Flow.png
 ```
 
 ---
