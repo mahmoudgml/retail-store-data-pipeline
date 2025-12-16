@@ -77,7 +77,7 @@ All datasets were provided in raw CSV format and required extensive preprocessin
 
 ## 🏗️ Architecture & Data Flow
 
-![Architecture & Data Flow](images/Architecture&Data_Flow.png)
+![Architecture & Data Flow](images/Architecture_Data_Flow.png)
 
 ---
 
