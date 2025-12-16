@@ -231,7 +231,7 @@ sqlcmd -S localhost -d RetailDB -i SQL_Scripts/03_analysis_queries.sql
 
 ### Inventory Analysis
 
-* Products with low stock
+* Products with low stock (less than 10 units)
 * Stores with highest inventory
 
 ### Staff Performance
